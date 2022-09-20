@@ -18,7 +18,5 @@ else
     minnumber = number1; 
 }
 
-Console.Write("Max = ");
-Console.WriteLine(maxnumber);
-Console.Write("Min = ");
-Console.WriteLine(minnumber);
+Console.WriteLine("Max = " + maxnumber);
+Console.WriteLine("Min = " + minnumber);
