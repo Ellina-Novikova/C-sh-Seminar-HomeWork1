@@ -8,7 +8,6 @@ if (n <= N)
     Console.WriteLine("Четные числа от 1 до " + N + ":");
     while (n <= N)
 {
-   
    Console.WriteLine(n); 
    n += 2;
 }
