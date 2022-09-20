@@ -2,7 +2,7 @@
 
 Console.WriteLine("Введите число");
 int number = Convert.ToInt32(Console.ReadLine());
-double rem = number % 2;
+int rem = number % 2;
 
 if (rem == 0)
 {
