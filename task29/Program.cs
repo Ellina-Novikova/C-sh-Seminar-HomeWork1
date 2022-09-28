@@ -9,13 +9,13 @@ void FillArray(int[] arr) //Наполняем массив случ.числа�
 }
 
 // void FillArray(int[] arr)  //Наполняем массив с клавиатуры
-{
-    for (int i = 0; i < arr.Length; i++)
-    {
-        Console.WriteLine($"Введите {i} элемент массива");
-        arr[i] = Convert.ToInt32(Console.ReadLine());        
-    }
-}
+// {
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         Console.WriteLine($"Введите {i} элемент массива");
+//         arr[i] = Convert.ToInt32(Console.ReadLine());        
+//     }
+// }
 
 void PrintArray(int[] array)
 {
