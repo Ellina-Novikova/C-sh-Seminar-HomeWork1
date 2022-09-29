@@ -21,7 +21,6 @@ int SummDigit(int number)   // Сумма цифр числа
 {
     int summ = 0;
     int digree = GetDigCount(number);
-    Console.WriteLine(digree);
     for (int i = 1; i <= digree; i++)
     {
         summ = summ + (number % 10);
