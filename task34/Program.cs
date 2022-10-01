@@ -33,4 +33,4 @@ Console.WriteLine("Введите количество элементов мас
 int[] array1 = new int[Convert.ToInt32(Console.ReadLine())];
 FillArrayRandom(array1, 100, 999);
 PrintArray(array1);
-Console.WriteLine("Количество четных элементов массива = " + CountEvenArray(array1));
+Console.WriteLine("Количество четных чисел в массиве = " + CountEvenArray(array1));
