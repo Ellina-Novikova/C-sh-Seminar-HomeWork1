@@ -18,7 +18,7 @@ void PrintArray(int[] array)
     Console.WriteLine();
 }
 
-int SumUnEvenArray(int[] array)
+int SumUnEvenIndArray(int[] array)  // Сумма элементов с нечетными индексами
 {
     int sum = 0;
     for (int i = 1; i < array.Length; i += 2)
@@ -32,4 +32,4 @@ Console.WriteLine("Введите количество элементов мас
 int[] array1 = new int[Convert.ToInt32(Console.ReadLine())];
 FillArrayRandom(array1, -10, 10);
 PrintArray(array1);
-Console.WriteLine("Сумма элементов с нечетными индексами = " + SumUnEvenArray(array1));
+Console.WriteLine("Сумма элементов с нечетными индексами = " + SumUnEvenIndArray(array1));
