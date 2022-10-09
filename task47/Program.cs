@@ -10,33 +10,33 @@ int GetNumberFromConsole(string text)
 // Ввод с консоли границ диапазона.
 double[] GetExtremeVoluesFromConsole()
 {
-    double[] extremeVolumes = new double[2];
+    double[] extremeVolues = new double[2];
     Console.WriteLine("Введите MIN значение диапазона");
-    extremeVolumes[0] = Convert.ToDouble(Console.ReadLine());
+    extremeVolues[0] = Convert.ToDouble(Console.ReadLine());
     Console.WriteLine("Введите MAX значение диапазона");
-    extremeVolumes[1] = Convert.ToDouble(Console.ReadLine());
-    return extremeVolumes;
+    extremeVolues[1] = Convert.ToDouble(Console.ReadLine());
+    return extremeVolues;
 }
 
 // Случайное вещественное число с округлением до 2-х знаков после запятой
-// в диапазоне от extremeVolumes[0] до extremeVolumes[1].
-double GetRandomDoubleValue(double[] extremeVolumes)
+// в диапазоне от extremeVolues[0] до extremeVolues[1].
+double GetRandomDoubleValue(double[] extremeVolues)
 {
     int tempNumber = new Random().Next(
-                    Convert.ToInt32(extremeVolumes[0]), 
-                    Convert.ToInt32(extremeVolumes[1])); // tempNumber = целое число в заданном диапазоне. 
+                    Convert.ToInt32(extremeVolues[0]), 
+                    Convert.ToInt32(extremeVolues[1])); // tempNumber = целое число в заданном диапазоне. 
     return Math.Round(new Random().NextDouble() + tempNumber, 2);     
 }
 
 // Наполнение массива случайными вещественными числами
-// в диапазоне от extremeVolumes[0] до extremeVolumes[1].
-void FillArrayRandomDouble(double[,] array, double[] extremeVolumes)
+// в диапазоне от extremeVolues[0] до extremeVolues[1].
+void FillArrayRandomDouble(double[,] array, double[] extremeVolues)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for(int j = 0; j < array.GetLength(1); j++)
         {
-            array[i,j] = GetRandomDoubleValue(extremeVolumes);
+            array[i,j] = GetRandomDoubleValue(extremeVolues);
         }
     }
 }
