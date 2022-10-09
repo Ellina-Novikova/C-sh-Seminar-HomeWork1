@@ -1,22 +1,42 @@
 ﻿// Задайте двумерный массив размером m×n, 
 // заполненный случайными вещественными числами.
 
-double GetRandomDoubleValue(double minValue, double maxValue)
+int GetNumberFromConsole(string text)
 {
-    int tempNumber = new Random().Next(Convert.ToInt32(minValue), Convert.ToInt32(maxValue));
-    // double tempVolume = new Random().NextDouble() + tempNumber;
-    return Math.Round(new Random().NextDouble() + tempNumber, 2);  
-    // double tempValue = new Random().NextDouble() + minValue + 1 - Math.Abs(minValue);
-    // return Math.Round(tempValue, 2);
+    Console.WriteLine(text);
+    return Convert.ToInt32(Console.ReadLine());
 }
 
-void FillArrayRandomDouble(double[,] array, double minValue, double maxValue)
+// Ввод с консоли границ диапазона.
+double[] GetExtremeVoluesFromConsole()
+{
+    double[] extremeVolumes = new double[2];
+    Console.WriteLine("Введите MIN значение диапазона");
+    extremeVolumes[0] = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Введите MAX значение диапазона");
+    extremeVolumes[1] = Convert.ToDouble(Console.ReadLine());
+    return extremeVolumes;
+}
+
+// Случайное вещественное число с округлением до 2-х знаков после запятой
+// в диапазоне от extremeVolumes[0] до extremeVolumes[1].
+double GetRandomDoubleValue(double[] extremeVolumes)
+{
+    int tempNumber = new Random().Next(
+                    Convert.ToInt32(extremeVolumes[0]), 
+                    Convert.ToInt32(extremeVolumes[1])); // tempNumber = целое число в заданном диапазоне. 
+    return Math.Round(new Random().NextDouble() + tempNumber, 2);     
+}
+
+// Наполнение массива случайными вещественными числами
+// в диапазоне от extremeVolumes[0] до extremeVolumes[1].
+void FillArrayRandomDouble(double[,] array, double[] extremeVolumes)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for(int j = 0; j < array.GetLength(1); j++)
         {
-            array[i,j] = GetRandomDoubleValue(minValue, maxValue);
+            array[i,j] = GetRandomDoubleValue(extremeVolumes);
         }
     }
 }
@@ -33,10 +53,10 @@ void PrintArray(double[,] arr)
     }
 }
 
-int m = 3;
-int n = 4;
+// Основная программа.
+int m = GetNumberFromConsole("Введите количество строк массива");
+int n = GetNumberFromConsole("Введите количество столбцов массива");
 double[,] array1 = new double[m, n];
-double minValue = -10;
-double maxValue = 10;
-FillArrayRandomDouble(array1, minValue, maxValue);
+double[] range = GetExtremeVoluesFromConsole(); // Границы возможных значений.
+FillArrayRandomDouble(array1, range);
 PrintArray(array1);
