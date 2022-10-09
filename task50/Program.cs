@@ -73,8 +73,7 @@ void FindeElementByIndex(int[,] array, int[] arrayIndex)
     else 
         Console.WriteLine("Элемент с индексом [" +
                         $"{arrayIndex[0]}, {arrayIndex[1]}] = " +
-                        $"{array[arrayIndex[0], arrayIndex[1]]}");    
-
+                        $"{array[arrayIndex[0], arrayIndex[1]]}"); 
 }
 
 //КОД ОСНОВНОЙ ПРОГРАММЫ
