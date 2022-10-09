@@ -15,6 +15,14 @@ double[] GetExtremeVoluesFromConsole()
     extremeVolues[0] = Convert.ToDouble(Console.ReadLine());
     Console.WriteLine("Введите MAX значение диапазона");
     extremeVolues[1] = Convert.ToDouble(Console.ReadLine());
+     while (extremeVolues[1] <= extremeVolues[0])
+    {
+       Console.WriteLine("Ошибка! MIN значение не может быть <= MAX!");
+       Console.WriteLine("Введите MIN значение диапазона");
+       extremeVolues[0] = Convert.ToDouble(Console.ReadLine());
+       Console.WriteLine("Введите MAX значение диапазона");
+       extremeVolues[1] = Convert.ToDouble(Console.ReadLine());
+    }
     return extremeVolues;
 }
 
