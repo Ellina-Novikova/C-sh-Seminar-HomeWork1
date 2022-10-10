@@ -17,8 +17,7 @@ int[] GetExtremeVoluesFromConsole()
     while (extremeVolues[1] <= extremeVolues[0])
     {
         Console.WriteLine("Ошибка! MIN значение не может быть <= MAX!");
-        extremeVolues[0] = GetNumberFromConsole("Введите MIN значение диапазона");
-        extremeVolues[1] = GetNumberFromConsole("Введите MAX значение диапазона"); 
+        extremeVolues = GetExtremeVoluesFromConsole();
     }
     return extremeVolues;
 }
