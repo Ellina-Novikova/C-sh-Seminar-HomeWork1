@@ -21,9 +21,8 @@ double[] GetExtremeVoluesFromConsole()
     extremeVolues[1] = GetDoubleNumberFromConsole("Введите MAX значение диапазона");
      while (extremeVolues[1] <= extremeVolues[0])
     {
-        Console.WriteLine("Ошибка! MIN значение не может быть <= MAX!");
-        extremeVolues[0] = GetDoubleNumberFromConsole("Введите MIN значение диапазона");
-        extremeVolues[1] = GetDoubleNumberFromConsole("Введите MAX значение диапазона");
+        Console.WriteLine("Ошибка! MIN значение не может быть <= MAX!");        
+        extremeVolues = GetExtremeVoluesFromConsole();
     }
     return extremeVolues;
 }
