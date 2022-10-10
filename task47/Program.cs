@@ -7,21 +7,23 @@ int GetNumberFromConsole(string text)
     return Convert.ToInt32(Console.ReadLine());
 }
 
+double GetDoubleNumberFromConsole(string text)
+{
+    Console.WriteLine(text);
+    return Convert.ToDouble(Console.ReadLine());
+}
+
 // Ввод с консоли границ диапазона.
 double[] GetExtremeVoluesFromConsole()
 {
-    double[] extremeVolues = new double[2];
-    Console.WriteLine("Введите MIN значение диапазона");
-    extremeVolues[0] = Convert.ToDouble(Console.ReadLine());
-    Console.WriteLine("Введите MAX значение диапазона");
-    extremeVolues[1] = Convert.ToDouble(Console.ReadLine());
+    double[] extremeVolues = new double[2];    
+    extremeVolues[0] = GetDoubleNumberFromConsole("Введите MIN значение диапазона");    
+    extremeVolues[1] = GetDoubleNumberFromConsole("Введите MAX значение диапазона");
      while (extremeVolues[1] <= extremeVolues[0])
     {
-       Console.WriteLine("Ошибка! MIN значение не может быть <= MAX!");
-       Console.WriteLine("Введите MIN значение диапазона");
-       extremeVolues[0] = Convert.ToDouble(Console.ReadLine());
-       Console.WriteLine("Введите MAX значение диапазона");
-       extremeVolues[1] = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Ошибка! MIN значение не может быть <= MAX!");
+        extremeVolues[0] = GetDoubleNumberFromConsole("Введите MIN значение диапазона");
+        extremeVolues[1] = GetDoubleNumberFromConsole("Введите MAX значение диапазона");
     }
     return extremeVolues;
 }
