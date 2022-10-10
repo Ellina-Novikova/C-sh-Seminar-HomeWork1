@@ -11,17 +11,13 @@ int GetNumberFromConsole(string text)
 int[] GetExtremeVoluesFromConsole()
 {
     int[] extremeVolues = new int[2];
-    Console.WriteLine("Введите MIN значение диапазона");
-    extremeVolues[0] = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Введите MAX значение диапазона");
-    extremeVolues[1] = Convert.ToInt32(Console.ReadLine());
+    extremeVolues[0] = GetNumberFromConsole("Введите MIN значение диапазона");
+    extremeVolues[1] = GetNumberFromConsole("Введите MAX значение диапазона");
     while (extremeVolues[1] <= extremeVolues[0])
     {
-       Console.WriteLine("Ошибка! MIN значение не может быть <= MAX!");
-       Console.WriteLine("Введите MIN значение диапазона");
-       extremeVolues[0] = Convert.ToInt32(Console.ReadLine());
-       Console.WriteLine("Введите MAX значение диапазона");
-       extremeVolues[1] = Convert.ToInt32(Console.ReadLine()); 
+        Console.WriteLine("Ошибка! MIN значение не может быть <= MAX!");
+        extremeVolues[0] = GetNumberFromConsole("Введите MIN значение диапазона");
+        extremeVolues[1] = GetNumberFromConsole("Введите MAX значение диапазона"); 
     }
     return extremeVolues;
 }
