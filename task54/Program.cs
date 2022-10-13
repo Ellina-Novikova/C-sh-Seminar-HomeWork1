@@ -41,7 +41,7 @@ int[,] InitializateArray(int m, int n)
     return new int[m,n];
 }
 
-void SelectionSortInLin(int[,] array, int lineIndex)
+void SelectionSortInLine(int[,] array, int lineIndex)
 {
     for(int j = 0; j < array.GetLength(1) - 1; j++)
     {
@@ -60,7 +60,7 @@ void SortArrayLines(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
-        SelectionSortInLin(arr, i);
+        SelectionSortInLine(arr, i);
     }
 }
 
