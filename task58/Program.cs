@@ -39,31 +39,6 @@ int[,] InitializateArray(int m, int n)
     return new int[m,n];
 }
 
-int SummLineArray(int[,] array, int lineIndex)
-{
-    int summ = 0;
-    for(int j = 0; j < array.GetLength(1); j++)
-    {
-        summ += array[lineIndex,j];
-    }
-    return summ;
-}
-
-int MinLineIndexArray(int[,] arr)
-{
-    int minLineIndex = 0;
-    int min = SummLineArray(arr, minLineIndex);
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        if (SummLineArray(arr, i) < min) 
-        {
-            min = SummLineArray(arr, i);
-            minLineIndex = i;
-        }
-    }
-    return minLineIndex;
-}
-
 int[,] GetRandomArray(string text, int lines, int collumns)
 {    
     int[,] array = InitializateArray(lines, collumns);
