@@ -76,10 +76,16 @@ int[,,] InitializateArray(int m, int n, int k)
 //КОД ОСНОВНОЙ ПРОГРАММЫ
 int m = GetNumberFromConsole("Введите размерность массива m");
 int n = GetNumberFromConsole("Введите размерность массива n");
-int k = GetNumberFromConsole("Введите размерность массива k");
+int k = GetNumberFromConsole("Введите размерность массива k");   
 int[,,] array = InitializateArray(m,n,k);
 int minValue = 10;
 int maxValue = 99;
-FillArrayUnicum(array,minValue,maxValue);
-PrintArray(array);
+if ((m * n * k) > (maxValue - minValue + 1))
+    Console.WriteLine($"Невозможно наполнить массив {m}*{n}*{k} " +
+                    $"уникальными числами от {minValue} до {maxValue}"); 
+else
+{
+    FillArrayUnicum(array,minValue,maxValue);
+    PrintArray(array);
+}
 
