@@ -16,11 +16,8 @@ void FillSpiralArray(int[,] arr, int minValue, int step)
         // Заполнение верхней строки слева направо.
         for(int j = 0 + iteration; j < (arr.GetLength(1) - iteration); j++)
         {            
-            if(value <= maxValue)
-            {
-                arr[0 + iteration,j] = value;
-                value += step;
-            }
+            arr[0 + iteration,j] = value;
+            value += step;            
         }
         // Заполнение правого столбца сверху вниз.
         for(int i = 1 + iteration; i < arr.GetLength(0) - iteration; i++)
@@ -31,7 +28,7 @@ void FillSpiralArray(int[,] arr, int minValue, int step)
                 value += step;
             }
         }
-        // Заполнение нижней строки спава налево. 
+        // Заполнение нижней строки справа налево. 
         for(int j = (arr.GetLength(1) - 2 - iteration); j >= iteration; j--)
         {            
             if(value <= maxValue)
