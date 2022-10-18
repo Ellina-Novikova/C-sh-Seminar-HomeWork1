@@ -52,7 +52,7 @@ void WriteNumbersFrom(double startNumber, int lastNumber)
 
 // Основная программа
 double number = GetNumberFromConsole("Введите число");
-int lastNumber = 3;
+int lastNumber = 1;
 Console.WriteLine();
 Console.WriteLine($"Натуральные числа от {number} до {lastNumber}:");
 WriteNumbersFrom(number,lastNumber);
