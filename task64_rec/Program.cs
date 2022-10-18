@@ -8,6 +8,20 @@ double GetNumberFromConsole(string text)
     return Convert.ToDouble(Console.ReadLine());
 }
 
+int GetBigInt(double number) // Округление в большую сторону.
+{
+    int numberInt = Convert.ToInt32(number);
+    if (numberInt < number) numberInt +=1;            
+    return numberInt;
+}
+
+int GetSmallInt(double number) // Округление в меньшую сторону.
+{
+    int numberInt = Convert.ToInt32(number);
+    if (numberInt > number) numberInt -=1;
+    return numberInt;
+}
+
 // Вывод натуральных чисел по возрастанию
 void WriteNumbersTo(int startNumber, int lastNumber)
 {
@@ -19,15 +33,14 @@ void WriteNumbersTo(int startNumber, int lastNumber)
     else Console.WriteLine(startNumber);     
 }
 
-// 
+// Вывод натуральных чисел общий
 void WriteNumbersFrom(double startNumber, int lastNumber)
 {
-    if (startNumber <= 0) startNumber = 1;
-    if (startNumber < lastNumber) WriteNumbersTo(Convert.ToInt32(startNumber), lastNumber);    
+    if (startNumber < 1) startNumber = 1;
+    if (startNumber < lastNumber) WriteNumbersTo(GetBigInt(startNumber), lastNumber);    
     else
     {    
-        int startIntNumber = Convert.ToInt32(startNumber);
-        if (startIntNumber > startNumber) startIntNumber -=1;
+        int startIntNumber = GetSmallInt(startNumber);        
         if (startIntNumber > lastNumber)
         {
             Console.Write(startIntNumber + ", ");
@@ -39,5 +52,7 @@ void WriteNumbersFrom(double startNumber, int lastNumber)
 
 // Основная программа
 double number = GetNumberFromConsole("Введите число");
+int lastNumber = 3;
 Console.WriteLine();
-WriteNumbersFrom(number,1);
+Console.WriteLine($"Натуральные числа от {number} до {lastNumber}:");
+WriteNumbersFrom(number,lastNumber);
