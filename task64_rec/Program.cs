@@ -50,7 +50,7 @@ void WriteNumbersFrom(double startNumber, int lastNumber)
     }    
 }
 
-// Основная программа
+//КОД ОСНОВНОЙ ПРОГРАММЫ
 double number = GetNumberFromConsole("Введите число");
 int lastNumber = 1;
 Console.WriteLine();
