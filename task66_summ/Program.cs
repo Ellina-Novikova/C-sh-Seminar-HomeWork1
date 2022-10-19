@@ -83,7 +83,7 @@ int GetSummNatutal(double startNumber, double lastNumber)
     return summNatural;   
 }           
 
-// Основная программа
+//КОД ОСНОВНОЙ ПРОГРАММЫ
 double numberFrom = GetNumberFromConsole("Введите число M");
 double numberTo = GetNumberFromConsole("Введите число N");
 Console.WriteLine();
